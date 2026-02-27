@@ -65,7 +65,7 @@ Return a JSON object with these exact top-level keys:
 
 ### Field Rules
 
-- **genome.id**: append `-r{N}` to parent id (e.g., `idea-003-r1` for round 1 refinement)
+- **genome.id**: MUST append `-r{N}` to parent id. Example: if parent is `idea-003` and this is round 1, the id MUST be `idea-003-r1`. Never reuse the parent id.
 - **genome.origin**: always `"refined"`
 - **genome.gen**: parent gen + 1
 - **genome.parents**: array containing the parent idea's id

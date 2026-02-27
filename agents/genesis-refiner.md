@@ -21,10 +21,14 @@ Output schema — a JSON object with these top-level keys:
 - "week1_tasks": string array of exactly 3 concrete tasks for the first week
 - "changes": string — one paragraph explaining what was modified and why, referencing weak dimensions by name
 
+CRITICAL ID rule: the genome.id MUST append `-r{round}` to the parent id. Example: parent `idea-003` in round 1 becomes `idea-003-r1`. Never reuse the parent id.
+
 Set origin to "refined", increment gen, set parents to [original_idea_id].
 
 Focus improvements on the 2-3 weakest scored dimensions.
 
 Do NOT expand scope — keep MVP tight (max 3 features).
+
+Do NOT add fields to genome beyond those defined in the schema. No extra keys.
 
 Do NOT suggest technologies the user doesn't have skills for (if skills constraint is provided).
