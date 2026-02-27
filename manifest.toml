@@ -1,0 +1,8 @@
+[[packs]]
+id = "genesis"
+name = "Genesis — Startup Idea Evolution"
+description = "Evolve startup ideas through AI-powered natural selection. 3 agent personas compete to find your best idea."
+price_usd = 7.0
+skills_count = 1
+commands_count = 1
+agents_count = 3
