@@ -1,95 +1,68 @@
 # Genesis
 
-Evolve startup ideas through AI-powered natural selection. 3 agent personas — Generator, Critic, Refiner — compete in a memetic algorithm to find your best idea.
+> Evolve startup ideas through AI-powered natural selection.
 
-## Installation
+Genesis runs a memetic algorithm over your idea direction: a Startup Visionary generates candidates, a Bootstrapper Analyst scores them across 8 dimensions, and a Pragmatic CTO refines the survivors into execution blueprints. Ideas that violate your constraints are eliminated before refinement. After the configured number of rounds, you get a winner and runner-up — each with a problem statement, monetization model, MVP scope, validation experiments, week-1 task list, and tech stack.
 
-### From skill7.dev
+```
+/genesis "AI tools for solo developers" --preset deep --strategy bootstrapper
+/genesis "B2B SaaS for restaurants" --discover
+/genesis "developer productivity" --budget 500 --timeline 4 --skills "python,react" --solo
+```
 
-Download the genesis pack and install:
+## Quick Start
+
+Install from skill7.dev:
 
 ```bash
 claude plugin add genesis.zip
 ```
 
-### From source
+Or from source:
 
 ```bash
 git clone https://github.com/heurema/genesis.git
 claude plugin add ./genesis
 ```
 
-## Usage
+First run — pick a direction and let the defaults handle the rest:
 
 ```bash
-# Basic: explore a direction
-/genesis "AI tools for solo developers"
-
-# With speed preset
-/genesis "B2B SaaS for restaurants" --preset deep
-
-# With strategy (scoring weights)
-/genesis "developer productivity" --strategy bootstrapper
-
-# Interactive discovery mode (asks 5 questions about your constraints)
-/genesis "SaaS ideas" --discover
-
-# Full constraint control
-/genesis "fintech tools" --budget 500 --timeline 4 --skills "python,react" --solo --no "regulated,marketplace"
+/genesis "developer productivity tools"
 ```
 
-## Features
+For interactive constraint setup, use discovery mode:
 
-- **Memetic algorithm**: ideas evolve through GENERATE → CRITIQUE → SELECT → REFINE → VARIATE
-- **3 agent personas**: Startup Visionary (divergent), Bootstrapper Analyst (convergent), Pragmatic CTO (execution)
-- **8-dimension scoring**: feasibility, speed to value, differentiation, market size, distribution, moats, risk, clarity
-- **Strategy presets**: bootstrapper, growth, moat, uniform — each weights dimensions differently
-- **Speed presets**: quick (2 rounds), standard (3), deep (5)
-- **Interactive discovery**: `--discover` runs a 5-question preflight to set constraints
-- **Constraint enforcement**: budget, timeline, skills, must-have/must-not, solo-founder mode
-- **Actionable output**: validation experiments + week-1 execution plan + tech stack
+```bash
+/genesis "SaaS ideas" --discover
+```
 
-## Output
+## Key Features
 
-Each run produces:
+- **Memetic evolution loop**: ideas go through GENERATE → CRITIQUE → ARBITER → REFINE → RE-SCORE, with fresh VARIATE injections on round 2+ to prevent convergence
+- **8-dimension scoring with strategy weights**: four strategies (bootstrapper, growth, moat, uniform) shift the emphasis to what matters for your stage and goals
+- **Hard constraint enforcement**: budget, timeline, required skills, solo-founder mode, must-have and must-not elements are enforced by a deterministic arbiter before any refinement compute runs
+- **Actionable winner output**: every surviving idea includes a tech stack, a week-1 execution plan, validation experiments, and the most likely failure modes
+- **Discovery mode**: five guided questions translate your situation into the correct constraint flags without memorizing CLI syntax
 
-- **Winner**: best idea with full execution blueprint
-- **Runner-up**: second best with condensed details
-- **Validation experiments**: cheapest ways to test the idea
-- **Week-1 plan**: concrete tasks to start immediately
-- **Risk factors**: most likely failure modes
+## Privacy & Data
 
-Runs are saved to `.genesis/runs/<run-id>/` with config, state, final results, and a human-readable summary.
-
-## How the Algorithm Works
-
-1. **GENERATE**: Generator creates N diverse ideas covering different audiences, channels, and problems
-2. **CRITIQUE**: Critic scores each idea on 8 dimensions with confidence levels and kill criteria
-3. **ARBITER**: Constraint violations eliminated, ideas ranked by weighted score, elites selected with diversity slot
-4. **REFINE**: Refiner improves each elite by addressing weakest dimensions, produces execution blueprint
-5. **VARIATE** (round 2+): Fresh random ideas injected to prevent premature convergence
-
-## Speed Presets
-
-| Preset | Rounds | Ideas | Elite | Typical Time |
-|--------|--------|-------|-------|-------------|
-| quick | 2 | 4 | 2 | ~3 min |
-| standard | 3 | 6 | 2 | ~5 min |
-| deep | 5 | 8 | 3 | ~10 min |
-
-## Strategy Presets
-
-| Strategy | Focus | Top Weights |
-|----------|-------|------------|
-| bootstrapper | Speed to revenue | feasibility (0.20), speed_to_value (0.20) |
-| growth | Scale potential | market_size (0.20), distribution (0.20) |
-| moat | Defensibility | moats (0.20), differentiation (0.20) |
-| uniform | Balanced | all dimensions equal (0.125) |
+Genesis makes no network calls. All agent dispatches stay inside Claude Code. Run artifacts are written to `.genesis/runs/<run-id>/` on your local filesystem (config.json, state.json, final.json, summary.md). Nothing leaves your machine.
 
 ## Requirements
 
 - Claude Code CLI
-- No external dependencies (pure Claude Code plugin)
+- No external dependencies
+
+## Documentation
+
+- [How It Works](docs/how-it-works.md) — architecture, agents, evolution loop, algorithm details
+- [Reference](docs/reference.md) — all flags, preset tables, output format, troubleshooting
+
+## Links
+
+- [skill7.dev listing](https://skill7.dev/creative/genesis)
+- [GitHub](https://github.com/heurema/genesis)
 
 ## License
 
