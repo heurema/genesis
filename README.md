@@ -12,18 +12,12 @@ Genesis runs a memetic algorithm over your idea direction: a Startup Visionary g
 
 ## Quick Start
 
-Install from skill7.dev:
-
+<!-- INSTALL:START — auto-synced from emporium/INSTALL_REFERENCE.md -->
 ```bash
-claude plugin add genesis.zip
+claude plugin marketplace add heurema/emporium
+claude plugin install genesis@emporium
 ```
-
-Or from source:
-
-```bash
-git clone https://github.com/heurema/genesis.git
-claude plugin add ./genesis
-```
+<!-- INSTALL:END -->
 
 First run — pick a direction and let the defaults handle the rest:
 
