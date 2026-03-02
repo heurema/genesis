@@ -8,8 +8,5 @@
   "homepage": "https://github.com/heurema/genesis",
   "repository": "https://github.com/heurema/genesis",
   "license": "MIT",
-  "keywords": ["ideation", "startup", "memetic-algorithm", "brainstorming", "evolution"],
-  "status": "active",
-  "owner": "heurema",
-  "tags": ["creative", "ideation", "startup"]
+  "keywords": ["ideation", "startup", "memetic-algorithm", "brainstorming", "evolution"]
 }
