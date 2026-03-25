@@ -1,19 +1,21 @@
-# Genesis
-
-<div align="center">
-
-**Evolve startup ideas through memetic natural selection**
-
-![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-5b21b6?style=flat-square)
-![Version](https://img.shields.io/badge/version-0.1.0-5b21b6?style=flat-square)
-![License](https://img.shields.io/badge/license-MIT-5b21b6?style=flat-square)
-
-```bash
-claude plugin marketplace add heurema/emporium
-claude plugin install genesis@emporium
+```
+                               _
+   ____ ____  ____  ___  _____(_)____
+  / __ `/ _ \/ __ \/ _ \/ ___/ / ___/
+ / /_/ /  __/ / / /  __(__  ) (__  )
+ \__, /\___/_/ /_/\___/____/_/____/
+/____/
 ```
 
-</div>
+**Evolve startup ideas through memetic natural selection.**
+
+[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-5b21b6?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-0.1.0-5b21b6?style=flat-square)]()
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+> A Visionary generates candidates, an Analyst scores them, a CTO refines survivors into execution blueprints.
+
+---
 
 ## What it does
 
